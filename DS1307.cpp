@@ -34,7 +34,7 @@ void DS1307Class::begin() {
 }
 
 void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
-                          uint8_t dayOfWeek, uint8_t hour, uint8_t minue,
+                          uint8_t dayOfWeek, uint8_t hour, uint8_t minute,
                           uint8_t second) {
     Wire.beginTransmission(DS1307_ADDRESS);
     Wire.send(0); //stop oscillator
