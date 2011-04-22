@@ -25,14 +25,31 @@ extern "C" {
 #include "DS1307.h"
 #include "Wire.h"
 
+uint8_t fromDecimalToBCD(uint8_t decimalValue) {
+    return ((decimalValue / 10) * 16) + decimalValue % 10;
+}
+
 void DS1307Class::begin() {
     Wire.begin();
 }
 
-void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t day,
-                          uint8_t weekDay, uint8_t hour, uint8_t minue,
+void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
+                          uint8_t dayOfWeek, uint8_t hour, uint8_t minue,
                           uint8_t second) {
-    //TODO: write to RTC
+    Wire.beginTransmission(DS1307_ADDRESS);
+    Wire.send(0); //stop oscillator
+
+    //Start sending the new values
+    Wire.send(fromDecimalToBCD(second));
+    Wire.send(fromDecimalToBCD(minute));
+    Wire.send(fromDecimalToBCD(hour));
+    Wire.send(fromDecimalToBCD(dayOfWeek));
+    Wire.send(fromDecimalToBCD(dayOfMonth));
+    Wire.send(fromDecimalToBCD(month));
+    Wire.send(fromDecimalToBCD(year));
+
+    Wire.send(0); //start oscillator
+    Wire.endTransmission();
 }
 
 uint8_t *DS1307Class::getDate() {
