@@ -30,12 +30,13 @@ void DS1307Class::begin() {
 }
 
 void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t day,
-                          uint8_t hour, uint8_t minue, uint8_t second) {
-    //TODO: write the values to RTC
+                          uint8_t weekDay, uint8_t hour, uint8_t minue,
+                          uint8_t second) {
+    //TODO: write to RTC
 }
 
 uint8_t *DS1307Class::getDate() {
-    uint8_t *values = (uint8_t *) malloc(6 * sizeof(uint8_t));
+    uint8_t *values = (uint8_t *) malloc(7 * sizeof(uint8_t));
 
     //TODO: read from RTC and populate values
 
