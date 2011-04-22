@@ -17,11 +17,16 @@
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include <stdlib.h>
+extern "C" {
+    #include <inttypes.h>
+    #include <stdlib.h>
+}
+
 #include "DS1307.h"
+#include "Wire.h"
 
 void DS1307Class::begin() {
-    //TODO: begin Wire
+    Wire.begin();
 }
 
 void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t day,

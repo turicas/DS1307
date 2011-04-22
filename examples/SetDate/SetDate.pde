@@ -1,3 +1,4 @@
+#include <Wire.h>
 #include <DS1307.h>
 
 void setup() {
