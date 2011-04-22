@@ -26,7 +26,11 @@ extern "C" {
 #include "Wire.h"
 
 uint8_t fromDecimalToBCD(uint8_t decimalValue) {
-    return ((decimalValue / 10) * 16) + decimalValue % 10;
+    return ((decimalValue / 10) * 16) + (decimalValue % 10);
+}
+
+uint8_t fromBCDToDecimal(uint8_t BCDValue) {
+    return ((BCDValue / 16) * 10) + (BCDValue % 16);
 }
 
 void DS1307Class::begin() {
@@ -52,10 +56,17 @@ void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
     Wire.endTransmission();
 }
 
-uint8_t *DS1307Class::getDate() {
-    uint8_t *values = (uint8_t *) malloc(7 * sizeof(uint8_t));
+int *DS1307Class::getDate() {
+    int *values = (int *) malloc(7 * sizeof(int));
+    Wire.beginTransmission(DS1307_ADDRESS);
+    Wire.send(0); //stop oscillator
+    Wire.endTransmission();
+    Wire.requestFrom(DS1307_ADDRESS, 7);
 
-    //TODO: read from RTC and populate values
+    for (int i = 6; i >= 0; i--) {
+        values[i] = fromBCDToDecimal(Wire.receive());
+    }
+    //TODO: 24-hour time?
 
     return values;
 }
