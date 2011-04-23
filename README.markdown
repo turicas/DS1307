@@ -25,6 +25,17 @@ Hardware
 
 There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99).
 
+<div style="height: 350px; line-height: 350px; text-align: center">
+    <img src="DS1307-front-back.jpg" style="vertical-alignt: middle; max-height: 100%" />
+    <br />
+    <img src="DS1307-Arduino.jpg" style="vertical-alignt: middle; max-height: 100%" />
+</div>
+<br />
+<div style="text-align: center">
+    DS1307 RTC module (front and back) from SparkFun and Arduino with connected to DS1307 RTC module.
+</div>
+
+
 
 Thanks To
 =========

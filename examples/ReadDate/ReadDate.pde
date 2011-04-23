@@ -7,12 +7,12 @@ Made by Álvaro Justen aka Turicas
 
 Pin connections on DS1307 module:
 
-DS1307 -- Arduino
-5V     -- 5V
-GND    -- GND 
-SQW    -- (not connected)
-SCL    -- Analog Input 5
-SDA    -- Analog Input 4
+[DS1307] <--> [Arduino]
+5V       <--> 5V
+GND      <--> GND 
+SQW      <--> (not connected)
+SCL      <--> Analog Input 5
+SDA      <--> Analog Input 4
 
 This software is free software.
 */
@@ -44,7 +44,7 @@ void loop() {
     sprintf(dateTime, "20%02d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
             RTCValues[1], RTCValues[2], RTCValues[4], RTCValues[5],
             RTCValues[6]);
-    Serial.print(dateTime); //TODO: ...
+    Serial.print(dateTime);
     Serial.print(" - day of week: ");
     Serial.println(fromNumberToWeekDay(RTCValues[3]));
 
