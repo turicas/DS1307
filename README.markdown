@@ -17,7 +17,7 @@ Download the tarball, uncompress it and put the directory `DS1307` inside your p
 Examples
 ========
 
-For now that are only 2 examples: `SetDate` and `ReadDate` -- the names autoexplain. :-)
+For now that are only 3 examples: `SetDateHardcoded`, `SedDateSerial` and `ReadDate` -- the names autoexplain. :-)
 
 
 Hardware
@@ -32,7 +32,7 @@ There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/pro
 </div>
 <br />
 <div style="text-align: center">
-    DS1307 RTC module (front and back) from SparkFun and Arduino with connected to DS1307 RTC module.
+    DS1307 RTC module (front and back) from SparkFun and Arduino connected to DS1307 RTC module using jumper wires and a breadboard.
 </div>
 
 
