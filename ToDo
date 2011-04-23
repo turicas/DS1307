@@ -1,2 +1,2 @@
 - Fix issue with years at fromBCDToDecimal and fromBCDToDecimal
-- Fix issue: when you make 53 reads, Arduino stops sending information via Serial, but RTC continues counting...
+- Use a structure instead of int array to get/set date/time data?

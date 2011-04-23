@@ -22,7 +22,7 @@ This software is free software.
 #include <DS1307.h>
 
 char dateTime[20];
-int *RTCValues;
+int RTCValues[7];
 
 void setup() {
     Serial.begin(9600);
@@ -32,7 +32,7 @@ void setup() {
 }
 
 void loop() {
-    RTCValues = DS1307.getDate(); //TODO: use a new structure?
+    DS1307.getDate(RTCValues);
     //Year: four-digit. Example: 2011
     //Month: two-digit, from 01 to 12
     //Day of month, from 01 to 31

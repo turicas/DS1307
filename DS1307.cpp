@@ -95,9 +95,7 @@ void DS1307Class::setDate(int year, uint8_t month, uint8_t dayOfMonth,
     Wire.endTransmission();
 }
 
-int *DS1307Class::getDate() {
-    int *values = (int *) malloc(7 * sizeof(int));
-
+void DS1307Class::getDate(int *values) {
     Wire.beginTransmission(DS1307_ADDRESS);
     Wire.send(0); //stop oscillator
     Wire.endTransmission();
@@ -107,8 +105,6 @@ int *DS1307Class::getDate() {
         values[i] = fromBCDToDecimal(Wire.receive());
     }
     //TODO: 24-hour time?
-
-    return values;
 }
 
 DS1307Class DS1307;

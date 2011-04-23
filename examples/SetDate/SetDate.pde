@@ -23,7 +23,7 @@ This software is free software.
 #include <DS1307.h>
 
 char dateTime[20];
-int *RTCValues;
+int RTCValues[7];
 
 void setup() {
     Serial.begin(9600);
@@ -43,7 +43,7 @@ void setup() {
 }
 
 void loop() {
-    RTCValues = DS1307.getDate(); //TODO: use a new structure?
+    DS1307.getDate(RTCValues); //TODO: use a new structure?
     sprintf(dateTime, "%04d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
             RTCValues[1], RTCValues[2], RTCValues[4], RTCValues[5],
             RTCValues[6]);
