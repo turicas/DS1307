@@ -1,2 +1,2 @@
-- Fix issue with years at fromBCDToDecimal and fromBCDToDecimal
+- Verify if it is really 24-hour
 - Use a structure instead of int array to get/set date/time data?

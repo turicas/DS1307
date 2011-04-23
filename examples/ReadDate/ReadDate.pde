@@ -33,7 +33,7 @@ void setup() {
 
 void loop() {
     DS1307.getDate(RTCValues);
-    //Year: four-digit. Example: 2011
+    //Year: two-digit, from 00 to 99
     //Month: two-digit, from 01 to 12
     //Day of month, from 01 to 31
     //Day of week, from 0 (sunday) to 6 (saturday)
@@ -41,7 +41,7 @@ void loop() {
     //Minute: from 0 to 59
     //Second: from 0 to 59
 
-    sprintf(dateTime, "%04d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
+    sprintf(dateTime, "20%02d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
             RTCValues[1], RTCValues[2], RTCValues[4], RTCValues[5],
             RTCValues[6]);
     Serial.print(dateTime); //TODO: ...

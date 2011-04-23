@@ -28,7 +28,7 @@ class DS1307Class {
     public:
         void begin();
         void getDate(int *values);
-        void setDate(int year, uint8_t month, uint8_t dayOfMonth,
+        void setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
                      uint8_t dayOfWeek, uint8_t hour, uint8_t minue,
                      uint8_t second);
 };

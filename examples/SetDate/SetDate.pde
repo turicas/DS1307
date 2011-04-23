@@ -30,8 +30,8 @@ void setup() {
     Serial.print("Setting the value of RTC... ");
 
     DS1307.begin();
-    DS1307.setDate(2011, 04, 22, 5, 12, 31, 30);
-    //Year: four-digit. Example: 2011
+    DS1307.setDate(11, 04, 22, 5, 12, 31, 30);
+    //Year: two-digit, from 00 to 99
     //Month: two-digit, from 01 to 12
     //Day of month, from 01 to 31
     //Day of week, from 0 (sunday) to 6 (saturday)
@@ -44,7 +44,7 @@ void setup() {
 
 void loop() {
     DS1307.getDate(RTCValues); //TODO: use a new structure?
-    sprintf(dateTime, "%04d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
+    sprintf(dateTime, "20%02d-%02d-%02d %02d:%02d:%02d", RTCValues[0],
             RTCValues[1], RTCValues[2], RTCValues[4], RTCValues[5],
             RTCValues[6]);
     Serial.print(dateTime); //TODO: ...

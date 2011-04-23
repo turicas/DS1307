@@ -58,25 +58,19 @@ char *fromNumberToWeekDay(int dayOfWeek) {
     return nameOfTheDay;
 }
 
-int fromDecimalToBCD(int decimalValue) {
-    return ((decimalValue / 1000) * 16 * 16 * 16) +
-           ((decimalValue / 100) * 16 * 16) +
-           ((decimalValue / 10) * 16) +
-           (decimalValue % 10);
+uint8_t fromDecimalToBCD(uint8_t decimalValue) {
+    return ((decimalValue / 10) * 16) + (decimalValue % 10);
 }
 
-int fromBCDToDecimal(int BCDValue) {
-    return ((BCDValue / (16 * 16 * 16)) * 1000) +
-           ((BCDValue / (16 * 16)) * 100) +
-           ((BCDValue / 16) * 10) +
-           (BCDValue % 16);
+uint8_t fromBCDToDecimal(uint8_t BCDValue) {
+    return ((BCDValue / 16) * 10) + (BCDValue % 16);
 }
 
 void DS1307Class::begin() {
     Wire.begin();
 }
 
-void DS1307Class::setDate(int year, uint8_t month, uint8_t dayOfMonth,
+void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
                           uint8_t dayOfWeek, uint8_t hour, uint8_t minute,
                           uint8_t second) {
     Wire.beginTransmission(DS1307_ADDRESS);
