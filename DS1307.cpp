@@ -20,24 +20,63 @@
 extern "C" {
     #include <inttypes.h>
     #include <stdlib.h>
+    #include <string.h>
+    #include <stdio.h>
 }
 
 #include "DS1307.h"
 #include "Wire.h"
 
-uint8_t fromDecimalToBCD(uint8_t decimalValue) {
-    return ((decimalValue / 10) * 16) + (decimalValue % 10);
+
+char *fromNumberToWeekDay(int dayOfWeek) {
+    char *nameOfTheDay = (char *) malloc(10 * sizeof(char));
+    if (dayOfWeek == 0) {
+        sprintf(nameOfTheDay, "Sunday");
+    }
+    else if (dayOfWeek == 1) {
+        sprintf(nameOfTheDay, "Monday");
+    }
+    else if (dayOfWeek == 2) {
+        sprintf(nameOfTheDay, "Tuesday");
+    }
+    else if (dayOfWeek == 3) {
+        sprintf(nameOfTheDay, "Wednesday");
+    }
+    else if (dayOfWeek == 4) {
+        sprintf(nameOfTheDay, "Thrusday");
+    }
+    else if (dayOfWeek == 5) {
+        sprintf(nameOfTheDay, "Friday");
+    }
+    else if (dayOfWeek == 6) {
+        sprintf(nameOfTheDay, "Saturday");
+    }
+    else {
+        sprintf(nameOfTheDay, "Not found");
+    }
+
+    return nameOfTheDay;
 }
 
-uint8_t fromBCDToDecimal(uint8_t BCDValue) {
-    return ((BCDValue / 16) * 10) + (BCDValue % 16);
+int fromDecimalToBCD(int decimalValue) {
+    return ((decimalValue / 1000) * 16 * 16 * 16) +
+           ((decimalValue / 100) * 16 * 16) +
+           ((decimalValue / 10) * 16) +
+           (decimalValue % 10);
+}
+
+int fromBCDToDecimal(int BCDValue) {
+    return ((BCDValue / (16 * 16 * 16)) * 1000) +
+           ((BCDValue / (16 * 16)) * 100) +
+           ((BCDValue / 16) * 10) +
+           (BCDValue % 16);
 }
 
 void DS1307Class::begin() {
     Wire.begin();
 }
 
-void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
+void DS1307Class::setDate(int year, uint8_t month, uint8_t dayOfMonth,
                           uint8_t dayOfWeek, uint8_t hour, uint8_t minute,
                           uint8_t second) {
     Wire.beginTransmission(DS1307_ADDRESS);
@@ -58,6 +97,7 @@ void DS1307Class::setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
 
 int *DS1307Class::getDate() {
     int *values = (int *) malloc(7 * sizeof(int));
+
     Wire.beginTransmission(DS1307_ADDRESS);
     Wire.send(0); //stop oscillator
     Wire.endTransmission();

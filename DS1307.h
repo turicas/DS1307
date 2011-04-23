@@ -28,10 +28,12 @@ class DS1307Class {
     public:
         void begin();
         int *getDate();
-        void setDate(uint8_t year, uint8_t month, uint8_t dayOfMonth,
+        void setDate(int year, uint8_t month, uint8_t dayOfMonth,
                      uint8_t dayOfWeek, uint8_t hour, uint8_t minue,
                      uint8_t second);
 };
+
+char *fromNumberToWeekDay(int dayOfWeek);
 
 extern DS1307Class DS1307;
 

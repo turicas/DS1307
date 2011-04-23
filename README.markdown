@@ -18,3 +18,9 @@ Examples
 ========
 
 For now that are only 2 examples: `SetDate` and `ReadDate` -- the names autoexplain. :-)
+
+
+Hardware
+========
+
+There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99).
