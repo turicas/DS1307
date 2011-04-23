@@ -1,29 +1,27 @@
 DS1307 Arduino Library
 ======================
 
-If do you need to know date and time in your Arduino project, so you need a Real-Time Clock (or RTC).
+If do you need to know date and time in your Arduino project, so you need a Real-Time Clock (or RTC)!
 
-One of the most famous RTC ICs is DS1307, from Dallas Semiconductor.
-
-This IC uses I²C to communicate with Arduino and this implementation is just a layer above Wire library.
+One of the most famous RTC ICs is DS1307, from Dallas Semiconductor. DS1307 uses [I²C (or Two-Wire Interface - TWI)](http://en.wikipedia.org/wiki/I%C2%B2C) to communicate with Arduino. This library is just a layer above [Wire library](http://www.arduino.cc/en/Reference/Wire) to make RTC easy to use.
 
 
 Installation
 ============
 
-Download the tarball, uncompress it and put the directory `DS1307` inside your personal library folder (`~/sketchbook/libraries/` -- on UNIX like SOs) or in the Arduino library folder on the system (`/usr/share/arduino/libraries` on GNU/Linux -- requires root access).
+[Download the tarball](https://github.com/turicas/DS1307/tarball/master), uncompress it and put the directory `DS1307` inside your personal library folder (`~/sketchbook/libraries/` -- on GNU/Linux) or in the Arduino-system library folder (`/usr/share/arduino/libraries` on GNU/Linux -- requires root access).
 
 
 Examples
 ========
 
-For now that are only 3 examples: `SetDateHardcoded`, `SedDateSerial` and `ReadDate` -- the names autoexplain. :-)
+For now that are only 3 examples: `SetDateHardcoded`, `SedDateSerial` and `ReadDate` -- the names autoexplain. :-) Install the library and go to `File` -> `Examples` -> `DS1307` -> (choose one example).
 
 
 Hardware
 ========
 
-There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99).
+There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99) - this library was tested only with this module.
 
 <div style="height: 350px; line-height: 350px; text-align: center">
     <img src="https://github.com/turicas/DS1307/raw/master/photos/DS1307-front-back.jpg" style="vertical-alignt: middle; max-height: 100%" />
@@ -40,4 +38,4 @@ There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/pro
 Thanks To
 =========
 
-Based on [Wiring.org.co RTC example](http://wiring.org.co/learning/libraries/realtimeclock.html) and [Daniel Gonçalves post at LusoRobótica Forum](http://lusorobotica.com/index.php/topic,681.0.html).
+The code of this library is based on [Wiring.org.co RTC example](http://wiring.org.co/learning/libraries/realtimeclock.html) and [Daniel Gonçalves post at LusoRobótica Forum](http://lusorobotica.com/index.php/topic,681.0.html) - thanks, guys!
