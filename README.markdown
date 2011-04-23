@@ -26,9 +26,9 @@ Hardware
 There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99).
 
 <div style="height: 350px; line-height: 350px; text-align: center">
-    <img src="DS1307-front-back.jpg" style="vertical-alignt: middle; max-height: 100%" />
+    <img src="https://github.com/turicas/DS1307/raw/master/photos/DS1307-front-back.jpg" style="vertical-alignt: middle; max-height: 100%" />
     <br />
-    <img src="DS1307-Arduino.jpg" style="vertical-alignt: middle; max-height: 100%" />
+    <img src="https://github.com/turicas/DS1307/raw/master/photos/DS1307-Arduino.jpg" style="vertical-alignt: middle; max-height: 100%" />
 </div>
 <br />
 <div style="text-align: center">
