@@ -1,1 +1,2 @@
-- Problem with 53 reads on all examples
+- Fix issue with years at fromBCDToDecimal and fromBCDToDecimal
+- Fix issue: when you make 53 reads, Arduino stops sending information via Serial, but RTC continues counting...

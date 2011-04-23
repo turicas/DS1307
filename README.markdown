@@ -24,3 +24,9 @@ Hardware
 ========
 
 There is a [RTC module with DS1307 sold by SparkFun](http://www.sparkfun.com/products/99).
+
+
+Thanks To
+=========
+
+Based on [Wiring.org.co RTC example](http://wiring.org.co/learning/libraries/realtimeclock.html) and [Daniel Gonçalves post at LusoRobótica Forum](http://lusorobotica.com/index.php/topic,681.0.html).
