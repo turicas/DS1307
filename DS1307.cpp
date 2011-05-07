@@ -29,23 +29,31 @@ extern "C" {
 
 
 char *fromNumberToWeekDay(int dayOfWeek) {
-    if (dayOfWeek == 0)
-        return "Sunday";
-    else if (dayOfWeek == 1)
-        return "Monday";
-    else if (dayOfWeek == 2)
-        return "Tuesday";
-    else if (dayOfWeek == 3)
-        return "Wednesday";
-    else if (dayOfWeek == 4)
-        return "Thrusday";
-    else if (dayOfWeek == 5)
-        return "Friday";
-    else if (dayOfWeek == 6)
-        return "Saturday";
-    else
-        return "Not found";
-
+    switch (dayOfWeek) {
+        case 0:
+            return "Sunday";
+            break;
+        case 1:
+            return "Monday";
+            break;
+        case 2:
+            return "Tuesday";
+            break;
+        case 3:
+            return "Wednesday";
+            break;
+        case 4:
+            return "Thrusday";
+            break;
+        case 5:
+            return "Friday";
+            break;
+        case 6:
+            return "Saturday";
+            break;
+        default:
+            return "Not found";
+    }
 }
 
 uint8_t fromDecimalToBCD(uint8_t decimalValue) {
