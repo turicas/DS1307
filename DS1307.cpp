@@ -29,33 +29,23 @@ extern "C" {
 
 
 char *fromNumberToWeekDay(int dayOfWeek) {
-    char *nameOfTheDay = (char *) malloc(10 * sizeof(char));
-    if (dayOfWeek == 0) {
-        sprintf(nameOfTheDay, "Sunday");
-    }
-    else if (dayOfWeek == 1) {
-        sprintf(nameOfTheDay, "Monday");
-    }
-    else if (dayOfWeek == 2) {
-        sprintf(nameOfTheDay, "Tuesday");
-    }
-    else if (dayOfWeek == 3) {
-        sprintf(nameOfTheDay, "Wednesday");
-    }
-    else if (dayOfWeek == 4) {
-        sprintf(nameOfTheDay, "Thrusday");
-    }
-    else if (dayOfWeek == 5) {
-        sprintf(nameOfTheDay, "Friday");
-    }
-    else if (dayOfWeek == 6) {
-        sprintf(nameOfTheDay, "Saturday");
-    }
-    else {
-        sprintf(nameOfTheDay, "Not found");
-    }
+    if (dayOfWeek == 0)
+        return "Sunday";
+    else if (dayOfWeek == 1)
+        return "Monday";
+    else if (dayOfWeek == 2)
+        return "Tuesday";
+    else if (dayOfWeek == 3)
+        return "Wednesday";
+    else if (dayOfWeek == 4)
+        return "Thrusday";
+    else if (dayOfWeek == 5)
+        return "Friday";
+    else if (dayOfWeek == 6)
+        return "Saturday";
+    else
+        return "Not found";
 
-    return nameOfTheDay;
 }
 
 uint8_t fromDecimalToBCD(uint8_t decimalValue) {
